@@ -1,58 +1,122 @@
-$(document).ready( function () {
-    $('article').lightGallery({
-        selector: '.img-item',
-        subHtmlSelectorRelative: true
-    });
+$(function() {
+    var isPhone = $(window).width() < 768;
 
-    let tocInit = function () {
-        $("#toc-content a").each( function () {
-            var oldText = $(this).text();
-            var newText = oldText.replace('#','');
-            $(this).text(newText);
+    init();
 
-            if ($(this).hasClass("toc-link")) {
-                $(this).addClass("text-truncate d-block");
-            }
+    function init() {
+        // $('.material-preloader').hide();
+        initialNavToggle();
+        setupRipple();
+        slidingBorder();
+        toc();
+
+        $('.post-content img').on('click',function(){
+            window.open($(this).attr('src'));
         });
     }
-    tocInit();
 
-    let cardListInit = function () {  
-	    $(".card ul").each( function () {
-            if ($(this).parent().hasClass("card-body")) {
-                $(this).unwrap();
+    function slidingBorder() {
+        // sliding border
+        var $activeState = $('.nav-indicator', 'nav'),
+            $navParent = $('.menu-wrapper', 'nav'),
+            overNav = false,
+            $hoveredLink,
+            $activeLink = $("ul.menus li.active a"),
+            activeHideTimeout;
+        setActiveLink(true);
+        $('.menu-wrapper ul.menus li').on('mousemove', onLinkHover);
+        $('.menu-wrapper').on('mouseleave', onLinksLeave);
+
+        function onLinkHover(e) {
+            if (!isPhone) {
+                $hoveredLink = e.target ? $(e.target) : e;
+                if (!$hoveredLink.is('li')) {
+                    $hoveredLink = $hoveredLink.parent('li');
+                }
+                var left = $hoveredLink.offset().left - $navParent.offset().left,
+                    width = $hoveredLink.width();
+                if (0 != $activeLink.length || overNav) {
+                    $activeState.css({
+                        transform: "translate3d(" + left + "px, 0, 0) scaleX(" + width / 100 + ")"
+                    });
+                } else {
+                    clearTimeout(activeHideTimeout),
+                        $activeState.css({
+                            transform: "translate3d(" + (left + width / 2) + "px, 0, 0) scaleX(0.001)"
+                        });
+                    setTimeout(function() {
+                        $activeState.addClass("animate-indicator").css({
+                            transform: "translate3d(" + left + "px, 0, 0) scaleX(" + width / 100 + ")"
+                        })
+                    }, 10);
+                }
+                overNav = true;
             }
-        });
-        $(".card ul").addClass("list-group list-group-flush");
-        $(".card ul li").addClass("list-group-item");
+        }
+
+        function onLinksLeave(e) {
+            if (!isPhone) {
+                if (0 == $activeLink.length) {
+                    var left = $hoveredLink.offset().left - $navParent.offset().left,
+                        width = $hoveredLink.width();
+                    $activeState.css({
+                        'transform': "translate3d(" + (left + width / 2) + "px, 0, 0) scaleX(0.001)"
+                    });
+                    activeHideTimeout = setTimeout(function() {
+                        $activeState.removeClass("animate-indicator")
+                    }, 200);
+                } else {
+                    onLinkHover($activeLink);
+                }
+                overNav = false;
+            }
+        }
+
+        function setActiveLink(load) {
+            if ($activeLink.length > 0) {
+                var left = $activeLink.offset().left - $navParent.offset().left;
+                $activeState.css({
+                    'transform': "translate3d(" + (left + $activeLink.width() / 2) + "px, 0, 0) scaleX(0.001)"
+                });
+                setTimeout(function() {
+                    $activeState.addClass("animate-indicator"),
+                        onLinkHover($activeLink)
+                }, 100);
+            }
+        }
     }
-    cardListInit();
 
-    $(".dropdown-menu a").on('click', function () {
-        event.preventDefault(); 
-        event.stopPropagation(); 
-        
-        if ($(this).hasClass("toc-link")) {
-            const elem = $(this).attr("href");
-            window.location.href = elem;
-        } 
-    });
+    function toc() {
+        if (!isPhone) {
+            //toc
+            $('#toc').html('');
+            $('#toc').tocify({
+                'selectors': 'h2,h3',
+                'extendPage': false,
+                'theme': 'none',
+                'scrollHistory':false
+            });
+        }
+    }
 
-    $('.expand-toggle').on('click', function () {
-        $("#toc-content").toggleClass("expand");
-        $(".expand-text").toggle();
-        $(".close-text").toggle();
-    })
+    function initialNavToggle() {
+        //nav icon morphing
+        $('.nav-toggle-icon').click(function() {
+            $('body').toggleClass('nav-active');
+            $(this).toggleClass('active').find('.material-hamburger').toggleClass('opened');
+            $('.menu-wrapper').toggleClass('active');
+            $('.logo').toggleClass('fixed');
+        });
+    }
 
-    $('.back-to-top').on('click', function () {
-        $('body, html').stop(true, true).animate({
-            scrollTop: 0
-        }, 100, 'linear');
-    });
+    function setupRipple() {
+        // ripple click http://fian.my.id/Waves/#start
+        Waves.attach('.wave');
+        Waves.attach('.main.index .post-header.with-cover');
+        Waves.attach('.pagination a');
+        Waves.attach('.pager .pager-item', ['waves-button']);
+        Waves.attach('.btn', ['waves-button']);
+        Waves.init();
+    }
 
-    $('.go-to-bottom').on('click', function () {
-        $('body, html').stop(true, true).animate({
-            scrollTop: $(document.body)[0].scrollHeight
-        }, 100, 'linear');
-    });
-});
+})
