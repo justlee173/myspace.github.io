@@ -15,7 +15,7 @@
 <meta property="og:description" content="前提准备注册gitHub账号github 注册域名这里我用的是godaddygodaddy 安装Node.js和GitNode.jsGit Win+R输入cmd12$ git --version(查看是否git安装成功)$ node -v(查看是否node.js安装成功)  创建目录在电脑某磁盘里面创建一个文件夹，如在C盘下创建一个Project（自己任意命名）文件夹，在提示命令符cmd中使用cd">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-11T04:46:32.053Z">
-<meta property="article:modified_time" content="2020-05-22T01:42:15.117Z">
+<meta property="article:modified_time" content="2020-05-22T01:44:10.940Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -115,7 +115,7 @@
 <h3 id="网站部署到github上"><a href="#网站部署到github上" class="headerlink" title="网站部署到github上"></a>网站部署到github上</h3><p>安装 hexo-deployer-git<br>提示命令符中输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <h3 id="github创建项目"><a href="#github创建项目" class="headerlink" title="github创建项目"></a>github创建项目</h3><p>仓库里面新建项目 如project（自己任意取名）.github.io 点击Initialize this repository with a README打上勾，创建成功后将绿色的Clone or download里面的网址复制。</p>
-<h3 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h3><p>C盘里找到自己创建的文件夹，打开文件 _config.yml 编译该文件 可以使用nodepad++: <a href="https://notepad-plus.en.softonic.com/" target="_blank" rel="noopener">nodepad++link</a>软件编译。在_config.yml文件中找到deploy:<br>然后更改为</p>
+<h3 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h3><p>C盘里找到自己创建的文件夹，打开文件 _config.yml 编译该文件 可以使用<a href="https://notepad-plus.en.softonic.com/" target="_blank" rel="noopener">nodepad++link</a>软件编译。在_config.yml文件中找到deploy:<br>然后更改为</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ deploy:</span><br><span class="line">  	<span class="built_in">type</span>: git</span><br><span class="line">  	repo: （这里粘贴刚刚复制的网址）</span><br><span class="line"> 	 branch: [master]</span><br></pre></td></tr></table></figure>
 <h3 id="部署网页"><a href="#部署网页" class="headerlink" title="部署网页"></a>部署网页</h3><p>在命令提示符中生成静态页，在cmd中输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  project g</span><br></pre></td></tr></table></figure>
