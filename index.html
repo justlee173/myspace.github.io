@@ -184,23 +184,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h3 id="前提准备"><a href="#前提准备" class="headerlink" title="前提准备"></a>前提准备</h3><h4 id="注册gitHub账号"><a href="#注册gitHub账号" class="headerlink" title="注册gitHub账号"></a>注册gitHub账号</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ [https://github.com/](https://github.com/)</span><br><span class="line">&#123;% link text url [https://github.com/] [github] %&#125;</span><br><span class="line"> [github]％&#125;</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+        <h3 id="前提准备"><a href="#前提准备" class="headerlink" title="前提准备"></a>前提准备</h3><h4 id="注册gitHub账号"><a href="#注册gitHub账号" class="headerlink" title="注册gitHub账号"></a>注册gitHub账号</h4><p>link: <a href="https://github.com/" target="_blank" rel="noopener">github</a></p>
 <h4 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h4><p>这里推荐godaddy</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ https://cart.godaddy.com/</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<p>link: <a href="https://cart.godaddy.com/" target="_blank" rel="noopener">godaddy</a></p>
 <h3 id="安装Node-js和Git"><a href="#安装Node-js和Git" class="headerlink" title="安装Node.js和Git"></a>安装Node.js和Git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Node.js https://nodejs.org/en/</span><br><span class="line">$ Git https://git-scm.com/</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>link: <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a><br>link: <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></p>
+<h3 id="Win-R输入cmd"><a href="#Win-R输入cmd" class="headerlink" title="Win+R输入cmd"></a>Win+R输入cmd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git --version(查看是否git安装成功)</span><br><span class="line">$ node -v(查看是否node.js安装成功)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h3><p>在电脑某磁盘里面创建一个文件夹，如在C盘下创建一个Project文件夹，在提示命令符cmd中使用cd命令到该文件下,如依次运行以下命令就能到Project文件夹下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br><span class="line">$ <span class="built_in">cd</span> ..</span><br><span class="line">$ <span class="built_in">cd</span> Project</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>More info: <a href="https://hexo.io.html" target="_blank" rel="noopener">Hexo</a></p>
+<h3 id="更该源-NPM（node-package-manager，是nodejs的包管理工具），由于国外的源比较慢，所以使用国内的源，可直接百度搜索npm更换国内镜像，这里用的是国内的淘宝的源。"><a href="#更该源-NPM（node-package-manager，是nodejs的包管理工具），由于国外的源比较慢，所以使用国内的源，可直接百度搜索npm更换国内镜像，这里用的是国内的淘宝的源。" class="headerlink" title="更该源 NPM（node package manager，是nodejs的包管理工具），由于国外的源比较慢，所以使用国内的源，可直接百度搜索npm更换国内镜像，这里用的是国内的淘宝的源。"></a>更该源 NPM（node package manager，是nodejs的包管理工具），由于国外的源比较慢，所以使用国内的源，可直接百度搜索npm更换国内镜像，这里用的是国内的淘宝的源。</h3><p>在提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g nrm  --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Hexo的组件，能让系统运行Hexo"><a href="#安装Hexo的组件，能让系统运行Hexo" class="headerlink" title="安装Hexo的组件，能让系统运行Hexo"></a>安装Hexo的组件，能让系统运行Hexo</h3><p>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hero-cli</span><br></pre></td></tr></table></figure>
+<h3 id="初始化文件夹"><a href="#初始化文件夹" class="headerlink" title="初始化文件夹"></a>初始化文件夹</h3><p>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init project(可自己任意命名的文件名)</span><br></pre></td></tr></table></figure>
+<h3 id="进入文件夹"><a href="#进入文件夹" class="headerlink" title="进入文件夹"></a>进入文件夹</h3><p>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> project</span><br></pre></td></tr></table></figure>
+<h3 id="安装npm"><a href="#安装npm" class="headerlink" title="安装npm"></a>安装npm</h3><p>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="查看效果"><a href="#查看效果" class="headerlink" title="查看效果"></a>查看效果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git --version(查看是否git安装成功)</span><br><span class="line">$ node -v(查看是否node.js安装成功)</span><br></pre></td></tr></table></figure>
+<h3 id="Win-R输入cmd-1"><a href="#Win-R输入cmd-1" class="headerlink" title="Win+R输入cmd"></a>Win+R输入cmd</h3><p>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">project s</span><br></pre></td></tr></table></figure>
+<p>生成一个链接 打开链接即为生成的博客，根据提示Crtl C停止，Y 确定。</p>
+<h3 id="网站部署到github上"><a href="#网站部署到github上" class="headerlink" title="网站部署到github上"></a>网站部署到github上</h3><p>安装 hexo-deployer-git<br>提示命令符中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="github创建项目"><a href="#github创建项目" class="headerlink" title="github创建项目"></a>github创建项目</h3><p>仓库里面新建项目 如project（自己任意取名）.github.io 点击Initialize this repository with a README打上勾，创建成功后将绿色的Clone or download里面的网址复制。</p>
+<h3 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h3><p>C盘里找到自己创建的文件夹，打开文件 _config.yml 编译该文件 可以使用nodepad++: <a href="https://notepad-plus.en.softonic.com/" target="_blank" rel="noopener">nodepad++link</a>软件编译。在_config.yml文件中找到deploy:<br>然后更改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ deploy:</span><br><span class="line">  	<span class="built_in">type</span>: git</span><br><span class="line">  	repo: （这里粘贴刚刚复制的网址）</span><br><span class="line"> 	 branch: [master]</span><br></pre></td></tr></table></figure>
+<h3 id="部署网页"><a href="#部署网页" class="headerlink" title="部署网页"></a>部署网页</h3><p>在命令提示符中生成静态页，在cmd中输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  project g</span><br></pre></td></tr></table></figure>
+<p>接着部署到github上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ project d</span><br></pre></td></tr></table></figure>
+<p>可能会弹出github的输入界面 输入邮箱和密码就行.</p>
+<p>返回github网页上看看 code是否有文件生成（刚开始无文件）<br>###域名管理<br>找到域名，管理DNS。<br>添加CNAME，主机blog 指向GitHub项目的名字如project.github.io 保存<br>然后github上点击Settings，滑动到下面找到GitHub Page，在Custom domain，输入你的域名后点击save保存。<br>搜索引擎搜索你的域名是否成功。</p>
+<h3 id="关于写文章"><a href="#关于写文章" class="headerlink" title="关于写文章"></a>关于写文章</h3><p>到C盘文件夹里面的source新建CNAME文件（无后缀名），在该文件中里面输入你的域名，保存。然后在_posts里创建一个MD文件（即一篇文章）<br>接着在CMD里面project g 和project d生成和部署就可以了</p>
 
       
     </div>
